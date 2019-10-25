@@ -200,8 +200,8 @@ bindsym $mod+Shift+z    gaps outer current minus 5
 
 # PulseAudio volume control
 bindsym $mod+m                  exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym $mod+KP_Add             exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
-bindsym $mod+KP_Subtract        exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym $mod+plus               exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym $mod+minus              exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
 
 # Screen color temperature control via redshift
 exec --no-startup-id redshift -l 51:0
