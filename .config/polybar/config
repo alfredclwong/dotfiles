@@ -201,7 +201,8 @@ interval = 3.0
 format-connected = wifi <label-connected>
 format-connected-underline = #388E3C
 label-connected-foreground = ${colors.foreground}
-label-connected = %signal%% %essid% %downspeed%
+;label-connected = %signal%% %essid% %downspeed%
+label-connected = %essid%
 format-connected-foreground = ${colors.foreground-alt}
 
 ;format-disconnected = wifi <label-disconnected>
@@ -416,19 +417,13 @@ format-prefix = "temp "
 format-prefix-foreground = ${colors.foreground-alt}
 
 [module/gputemp]
-type = internal/temperature
-thermal-zone = 0
-base-temperature = 20
-warn-temperature = 60
- 
-hwmon-path = /sys/class/drm/card0/device/hwmon/hwmon0/temp1_input
+type = custom/script
+exec = nvidia-smi --format=,csv,noheader --query-gpu=temperature.gpu | xargs echo
 format-underline = #F9A825
 format-foreground = ${colors.foreground}
 format-prefix = "gpu "
+format-suffix = "°C"
 format-prefix-foreground = ${colors.foreground-alt}
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
 
 [module/powermenu]
 type = custom/menu
