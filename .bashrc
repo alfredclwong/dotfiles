@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+set -o vi
+
 alias archey3='archey3 --config=~/.config/archey3/config'
 alias config='/usr/bin/git --git-dir=/home/alfred/.dotfiles/ --work-tree=/home/alfred'
 
