@@ -409,7 +409,7 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/cputemp]
 type = custom/script
-exec = echo `sensors -A | grep -oP '^CPU.+?  \+\K\d+' | awk '{k+=$1}END{print k/NR}'`°C
+exec = echo `sensors -A | grep -oP '^SMBUSMASTER 0:.+?  \+\K\d+' | awk '{k+=$1}END{print k/NR}'`°C
 interval = 10
 format-underline = #F9A825
 format-foreground = ${colors.foreground}
